@@ -1,37 +1,3 @@
 Base path: D:/unity5.2/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-11832
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-11720
 Cmd: getPlatforms
-Cmd: preprocess
-  insize=976 outsize=976 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=990 outsize=1087 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=990 outsize=713 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1001 outsize=1087 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1001 outsize=859 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1939 outsize=1591 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1939 outsize=1233 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=751 outsize=3776 kw=SHADOWS_DEPTH _ALPHAPREMULTIPLY_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=751 outsize=1233 kw=SHADOWS_DEPTH _ALPHAPREMULTIPLY_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=982 outsize=3979 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _ALPHAPREMULTIPLY_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=982 outsize=10650 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _ALPHAPREMULTIPLY_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=938 outsize=4101 kw=DIRECTIONAL SHADOWS_OFF _ALPHAPREMULTIPLY_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=938 outsize=5669 kw=DIRECTIONAL SHADOWS_OFF _ALPHAPREMULTIPLY_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1470 outsize=1274 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1470 outsize=770 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=4587 outsize=4093 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=4587 outsize=998 kw= pd= ok=1

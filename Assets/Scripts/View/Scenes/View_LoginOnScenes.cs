@@ -31,6 +31,7 @@ namespace View
             GoUIMagicHeroInfo.SetActive(false);
             GoUISwordHeroInfo.SetActive(true);
             GlobleParameterMgr._HeroType = HeroType.SwordHero;
+            Ctrl_LoginOnScenes.Instance.PlayAudioEffectSword();
         }
 
         public void ChangeToMagicHero()
@@ -40,6 +41,7 @@ namespace View
             GoUIMagicHeroInfo.SetActive(true);
             GoUISwordHeroInfo.SetActive(false);
             GlobleParameterMgr._HeroType = HeroType.MagicHero;
+            Ctrl_LoginOnScenes.Instance.PlayAudioEffectMagic();
         }
 
         public void SubmitInfo()

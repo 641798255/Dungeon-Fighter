@@ -69,6 +69,50 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Example for EasyButton\Bullet.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Example for EasyButton\ETPlayer.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyJoystick\Example-thirdPerson_DirectEventMode\JoystickEvent.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyJoystick\Example_FirstPerson_DirectMode\GUIFirstDirect.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyJoystick\ExitButton.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-FreeCam\FreeCam.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-FreeCam\GuiCam.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-ManipulationImage\GuiPhoto.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-ManipulationImage\Photo.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-MultiLayer\GuiLayer.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-MultiLayer\TouchLayer.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-Multiplefingers\GuiMultiFinger.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-Multiplefingers\ObjectTouch.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-Multiplefingers\ScreenTouch.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-Multiplefingers\SlowRotate.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\DoubleTap.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\Drag.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\GuiOneFinger.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\LongTap.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\Swipe.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\Tap.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-OneFinger\TouchStart.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-StartMenu\GuiStartMenu.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\GuiTwoFinger.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\Pinch.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\Twist.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\TwoDoubleTap.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\TwoDrag.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\TwoLongTap.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\TwoSwipe.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\TwoTap.cs" />
+    <Compile Include="Assets\EasyTouch\Example\C# Example\Examples for EasyTouch\Example-TwoFinger\TwoTouchStart.cs" />
+    <Compile Include="Assets\EasyTouch\Plugins\EasyButton.cs" />
+    <Compile Include="Assets\EasyTouch\Plugins\EasyJoystick.cs" />
+    <Compile Include="Assets\EasyTouch\Plugins\EasyTouch.cs" />
+    <Compile Include="Assets\EasyTouch\Plugins\EasyTouchInput.cs" />
+    <Compile Include="Assets\EasyTouch\Plugins\Finger.cs" />
+    <Compile Include="Assets\EasyTouch\Plugins\Gesture.cs" />
+    <Compile Include="Assets\EasyTouch\Plugins\MonoSingleton.cs" />
+    <Compile Include="Assets\EasyTouch\Plugins\MovingJoystick.cs" />
+    <Compile Include="Assets\EasyTouch\Plugins\VirtualScreen.cs" />
+    <Compile Include="Assets\EasyTouch\Plugins\_C#-Event-Template\C_EasyButtonTemplate.cs" />
+    <Compile Include="Assets\EasyTouch\Plugins\_C#-Event-Template\C_EasyJoystickTemplate.cs" />
+    <Compile Include="Assets\EasyTouch\Plugins\_C#-Event-Template\C_EasyTouchTemplate.cs" />
     <Compile Include="Assets\Plugin\TexturePacker\AtlasData.cs" />
     <Compile Include="Assets\Plugin\TexturePacker\TexturePacker.cs" />
     <Compile Include="Assets\Resources\Models\Maps\VW_ActionRPG_AssetPack\Scripts\ActivateEffects.cs" />
@@ -129,6 +173,14 @@
     <Compile Include="Assets\Resources\ParticleProps\csPoint\csPoint.cs" />
     <Compile Include="Assets\Resources\ParticleProps\groundBrokeRed\DestroyForTime.cs" />
     <Compile Include="Assets\Scripts\Control\BaseControl.cs" />
+    <Compile Include="Assets\Scripts\Control\Enemy\Ctrl_Enemy.cs" />
+    <Compile Include="Assets\Scripts\Control\Player\Ctrl_DisplayHero.cs" />
+    <Compile Include="Assets\Scripts\Control\Player\Ctrl_HeroAnimation.cs" />
+    <Compile Include="Assets\Scripts\Control\Player\Ctrl_HeroAttack.cs" />
+    <Compile Include="Assets\Scripts\Control\Player\Ctrl_HeroAttackInputByET.cs" />
+    <Compile Include="Assets\Scripts\Control\Player\Ctrl_HeroAttackInputByKey.cs" />
+    <Compile Include="Assets\Scripts\Control\Player\Ctrl_HeroMovingByET.cs" />
+    <Compile Include="Assets\Scripts\Control\Player\Ctrl_HeroMovingByKey.cs" />
     <Compile Include="Assets\Scripts\Control\Scenes\Ctrl_LoginOnScenes.cs" />
     <Compile Include="Assets\Scripts\Control\Scenes\Ctrl_StartScenes.cs" />
     <Compile Include="Assets\Scripts\Globle\ConvertEnumToStr.cs" />
@@ -136,12 +188,14 @@
     <Compile Include="Assets\Scripts\Globle\GlobleParameter.cs" />
     <Compile Include="Assets\Scripts\Globle\GlobleParameterMgr.cs" />
     <Compile Include="Assets\Scripts\Kernal\AudioManager.cs" />
-    <Compile Include="Assets\Scripts\Modle\Player\Ctrl_DisplayHero.cs" />
+    <Compile Include="Assets\Scripts\Kernal\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Kernal\UnityHelper.cs" />
     <Compile Include="Assets\Scripts\View\Scenes\View_LoadingScenes.cs" />
     <Compile Include="Assets\Scripts\View\Scenes\View_LoginOnScenes.cs" />
     <Compile Include="Assets\Scripts\View\Scenes\View_StartScenes.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\EasyTouch\Readme_first.txt" />
     <None Include="Assets\Resources\Models\Maps\VW_ActionRPG_AssetPack\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\Resources\Models\Maps\VW_ActionRPG_AssetPack\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\BlurEffectConeTaps.shader" />
     <None Include="Assets\Resources\Models\Maps\VW_ActionRPG_AssetPack\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\CameraMotionBlur.shader" />
