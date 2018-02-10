@@ -12,7 +12,7 @@ using Kernal;
 
 namespace Control
 {
-    public class Ctrl_StartScenes : MonoBehaviour {
+    public class Ctrl_StartScenes : BaseControl {
 
         public static Ctrl_StartScenes Instance;
 
@@ -40,8 +40,7 @@ namespace Control
 
         private void Load()
         {
-            GlobleParameterMgr.Nextscenes = ScenesEnum.LoginOnScenes;
-            Application.LoadLevel(ConvertEnumToStr.GetInstance().GetStringByEnum(ScenesEnum.LoadingScenes));
+            base.EnterNextScenes(ScenesEnum.LoginOnScenes);
         }
 
         private void OnDestroy()

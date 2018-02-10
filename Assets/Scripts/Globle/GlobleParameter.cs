@@ -25,6 +25,13 @@ namespace Globle
         LevelTwo,
         BaseScenes
     }
+
+    public enum HeroType
+    {
+        SwordHero,
+        MagicHero,
+        Other
+    }
 }
 
 

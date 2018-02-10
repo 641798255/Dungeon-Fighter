@@ -7,12 +7,16 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System;
+using Globle;
+using Kernal;
 
 namespace Globle
 {
     public static class GlobleParameterMgr  {
 
-        public static ScenesEnum Nextscenes = ScenesEnum.LoginOnScenes; 
+        public static ScenesEnum Nextscenes = ScenesEnum.LoginOnScenes;
+        public static string PlayerName = null;
+        public static HeroType _HeroType = HeroType.SwordHero;
     }
 }
 
