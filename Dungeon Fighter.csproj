@@ -190,6 +190,13 @@
     <Compile Include="Assets\Scripts\Kernal\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Kernal\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Kernal\UnityHelper.cs" />
+    <Compile Include="Assets\Scripts\Modle\Player\PlayerExtendData.cs" />
+    <Compile Include="Assets\Scripts\Modle\Player\PlayerExtendDataProxy.cs" />
+    <Compile Include="Assets\Scripts\Modle\Player\PlayerKernalData.cs" />
+    <Compile Include="Assets\Scripts\Modle\Player\PlayerKernalDataProxy.cs" />
+    <Compile Include="Assets\Scripts\Modle\Player\UpGradeRule.cs" />
+    <Compile Include="Assets\Scripts\View\Player\View_DisplayPlayerInfo.cs" />
+    <Compile Include="Assets\Scripts\View\Player\View_PlayerInfoResponse.cs" />
     <Compile Include="Assets\Scripts\View\Scenes\View_LoadingScenes.cs" />
     <Compile Include="Assets\Scripts\View\Scenes\View_LoginOnScenes.cs" />
     <Compile Include="Assets\Scripts\View\Scenes\View_StartScenes.cs" />

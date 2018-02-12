@@ -64,10 +64,52 @@ namespace Globle
        NormalATK2,
        NormalATK3,
     }
+
+    public enum LevelName
+    {
+        Level_0=0,
+        level_1,
+        level_2,
+        level_3,
+        level_4,
+        level_5,
+        level_6,
+        level_7,
+        level_8,
+        level_9,
+        level_10,
+    }
     #endregion
 
     #region 项目的委托类型
     public delegate void Del_PakyerControlWithStr(string controlType);
+
+    public delegate void Del_PlayerKernalModel(KeyValueUpdate kv);
+    public delegate void Del_PlayerExtendModel(KeyValueUpdate kv);
+
+
+    public class KeyValueUpdate
+    {
+        private string _Key;
+        private object _Value;
+
+        public string Key
+        {
+            get { return _Key; }
+        }
+
+        public object Value
+        {
+            get { return _Value; }
+        }
+
+        public KeyValueUpdate(string key, object value)
+        {
+            _Key = key;
+            _Value = value;
+        }
+    }
+
     #endregion
 
     #region 项目标签定义
