@@ -129,8 +129,8 @@ namespace Control
             foreach (GameObject goItem in goEnemys)
             {
                 //判断敌人是否存活
-                Ctrl_Enemy enemy = goItem.GetComponent<Ctrl_Enemy>();
-                if (enemy != null && enemy.IsEnemyAlive)
+                Ctrl_Warrior_Property enemy = goItem.GetComponent<Ctrl_Warrior_Property>();
+                if (enemy != null && enemy.CurrentState!=SimpleEnemyState.Death)
                 {
                     _LisEnemys.Add(goItem);
                 }
@@ -144,7 +144,7 @@ namespace Control
             {
                 foreach (GameObject goEnemy in _LisEnemys)
                 {
-                    if (goEnemy.GetComponent<Ctrl_Enemy>().IsEnemyAlive)
+                    if (goEnemy.GetComponent<Ctrl_Warrior_Property>().CurrentState!=SimpleEnemyState.Death)
                     {
                         float distance = Vector3.Distance(this.gameObject.transform.position, goEnemy.transform.position);
                         if (distance < _FloMaxDistance)

@@ -84,6 +84,15 @@ namespace Globle
         level_9,
         level_10,
     }
+
+    public enum SimpleEnemyState
+    {
+        Idle,
+        Walking,
+        Attack,
+        Hurt,
+        Death
+    }
     #endregion
 
     #region 项目的委托类型
