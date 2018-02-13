@@ -19,6 +19,9 @@ namespace Globle
         public const string INPUT_MGR_ATTACKNAME_NORMAL = "NormalAttack";
         public const string INPUT_MGR_ATTACKNAME_MAGICA = "MagicTrickA";
         public const string INPUT_MGR_ATTACKNAME_MAGICB = "MagicTrickB";
+        public const string INPUT_MGR_ATTACKNAME_MAGICC = "MagicTrickC";
+        public const string INPUT_MGR_ATTACKNAME_MAGICD = "MagicTrickD";
+
         public const float INTERVAL_TIME_0DOT1 = 0.1f;
         public const float INTERVAL_TIME_0DOT2 = 0.2f;
         public const float INTERVAL_TIME_0DOT5 = 0.5f;
@@ -55,7 +58,9 @@ namespace Globle
         Running,
         NormalAttack,
         MagicTrickA,
-        MagicTrickB
+        MagicTrickB,
+        MagicTrickC,
+        MagicTrickD,
     }
 
     public enum NormalATKComboState

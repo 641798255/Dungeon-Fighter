@@ -15,27 +15,49 @@ namespace Control
 {
     public class Ctrl_HeroAttackInputByET : BaseControl
     {
+        public static event Del_PakyerControlWithStr EvePlayerControl;
         public static Ctrl_HeroAttackInputByET Instance;
-        HeroActionState _CurrentActionState = HeroActionState.None;
+
         private void Awake()
         {
             Instance = this;
         }
 
-        private void Start()
+        public void ResponseATKByNormal()
         {
-            _CurrentActionState = HeroActionState.Idle;
+            if (EvePlayerControl != null)
+            {
+                EvePlayerControl(GlobleParameter.INPUT_MGR_ATTACKNAME_NORMAL);
+            }
         }
-        private void Update()
+        public void ResponseATKByMagicA()
         {
-            CtrlHeroAnimationState();
+            if (EvePlayerControl != null)
+            {
+                EvePlayerControl(GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICA);
+            }
         }
-
-        void CtrlHeroAnimationState()
+        public void ResponseATKByMagicB()
         {
-
+            if (EvePlayerControl != null)
+            {
+                EvePlayerControl(GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICB);
+            }
         }
-
+        public void ResponseATKByMagicC()
+        {
+            if (EvePlayerControl != null)
+            {
+                EvePlayerControl(GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICC);
+            }
+        }
+        public void ResponseATKByMagicD()
+        {
+            if (EvePlayerControl != null)
+            {
+                EvePlayerControl(GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICD);
+            }
+        }
     }
 }
 

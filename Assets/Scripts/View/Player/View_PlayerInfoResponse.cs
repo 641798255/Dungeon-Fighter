@@ -7,9 +7,9 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System;
-using Modle;
 using Kernal;
 using Globle;
+using Control;
 
 namespace View
 {
@@ -21,6 +21,31 @@ namespace View
         {
             Go_PlayerDetailInfoPanel.SetActive(!Go_PlayerDetailInfoPanel.activeSelf);
         }
+
+        #region 响应玩家虚拟按键点击
+
+        public void ResponseATKByNormal()
+        {
+            Ctrl_HeroAttackInputByET.Instance.ResponseATKByNormal();
+        }
+        public void ResponseATKByMagicA()
+        {
+            Ctrl_HeroAttackInputByET.Instance.ResponseATKByMagicA();
+        }
+        public void ResponseATKMagicB()
+        {
+            Ctrl_HeroAttackInputByET.Instance.ResponseATKByMagicB();
+        }
+        public void ResponseATKMagicC()
+        {
+            Ctrl_HeroAttackInputByET.Instance.ResponseATKByMagicC();
+        }
+        public void ResponseATKMagicD()
+        {
+            Ctrl_HeroAttackInputByET.Instance.ResponseATKByMagicD();
+        }
+
+        #endregion
     }
 }
 

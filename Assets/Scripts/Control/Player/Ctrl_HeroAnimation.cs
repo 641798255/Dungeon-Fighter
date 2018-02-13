@@ -23,6 +23,8 @@ namespace Control
         public AnimationClip Ani_NormalAttack3;
         public AnimationClip Ani_MagicTrickA;
         public AnimationClip Ani_MagicTrickB;
+        public AnimationClip Ani_MagicTrickC;
+        public AnimationClip Ani_MagicTrickD;
         Animation AnimationHandle;
         bool _IsSinglePlay = true;
         NormalATKComboState _CurrentATKCombo = NormalATKComboState.NormalATK1;
@@ -120,7 +122,7 @@ namespace Control
                         {
                             _IsSinglePlay = false;
                             AnimationHandle.CrossFade(Ani_MagicTrickA.name);
-                            yield return new WaitForSeconds(Ani_NormalAttack1.length);
+                            yield return new WaitForSeconds(Ani_MagicTrickA.length);
                         }
                         else
                         {
@@ -133,7 +135,31 @@ namespace Control
                         {
                             _IsSinglePlay = false;
                             AnimationHandle.CrossFade(Ani_MagicTrickB.name);
-                            yield return new WaitForSeconds(Ani_NormalAttack1.length);
+                            yield return new WaitForSeconds(Ani_MagicTrickB.length);
+                        }
+                        else
+                        {
+                            StartCoroutine("ReturnOriginalAction");
+                        }
+                        break;
+                    case HeroActionState.MagicTrickC:
+                        if (_IsSinglePlay)
+                        {
+                            _IsSinglePlay = false;
+                            AnimationHandle.CrossFade(Ani_MagicTrickC.name);
+                            yield return new WaitForSeconds(Ani_MagicTrickC.length);
+                        }
+                        else
+                        {
+                            StartCoroutine("ReturnOriginalAction");
+                        }
+                        break;
+                    case HeroActionState.MagicTrickD:
+                        if (_IsSinglePlay)
+                        {
+                            _IsSinglePlay = false;
+                            AnimationHandle.CrossFade(Ani_MagicTrickD.name);
+                            yield return new WaitForSeconds(Ani_MagicTrickD.length);
                         }
                         else
                         {

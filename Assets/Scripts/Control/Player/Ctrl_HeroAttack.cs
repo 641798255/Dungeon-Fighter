@@ -28,9 +28,20 @@ namespace Control
 
         private void Awake()
         {
+            //键盘
             Ctrl_HeroAttackInputByKey.EvePlayerControl += ResponseNormalAttack;
             Ctrl_HeroAttackInputByKey.EvePlayerControl += RespnseMagicTrickA;
             Ctrl_HeroAttackInputByKey.EvePlayerControl += RespnseMagicTrickB;
+            Ctrl_HeroAttackInputByKey.EvePlayerControl += RespnseMagicTrickC;
+            Ctrl_HeroAttackInputByKey.EvePlayerControl += RespnseMagicTrickD;
+
+            //ET
+            Ctrl_HeroAttackInputByET.EvePlayerControl += ResponseNormalAttack;
+            Ctrl_HeroAttackInputByET.EvePlayerControl += RespnseMagicTrickA;
+            Ctrl_HeroAttackInputByET.EvePlayerControl += RespnseMagicTrickB;
+            Ctrl_HeroAttackInputByET.EvePlayerControl += RespnseMagicTrickC;
+            Ctrl_HeroAttackInputByET.EvePlayerControl += RespnseMagicTrickD;
+
         }
 
         private void Start()
@@ -66,9 +77,23 @@ namespace Control
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickB);
             }
         }
-        #endregion 
+        void RespnseMagicTrickC(string controlType)
+        {
+            if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICC)
+            {
+                Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickC);
+            }
+        }
+        void RespnseMagicTrickD(string controlType)
+        {
+            if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICD)
+            {
+                Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickD);
+            }
+        }
+        #endregion
 
-       // 把附近所有的敌人放入“敌人数组”
+        // 把附近所有的敌人放入“敌人数组”
         IEnumerator RecordNearByEnemysToArray()
         {
             while (true)
