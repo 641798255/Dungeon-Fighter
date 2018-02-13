@@ -75,6 +75,7 @@ namespace Modle
 	    {
 	        ++base.IntLevel;
             //等级提升，相应玩家的最大核心数值会进行提升
+
             UpGradeRule.GetInstance().UpGradeOperation((Globle.LevelName)base.IntLevel);
 	    }
 

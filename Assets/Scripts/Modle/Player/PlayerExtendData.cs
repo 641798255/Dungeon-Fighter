@@ -16,7 +16,7 @@ namespace Modle
 {
     public class PlayerExtendData
     {
-        public static event Del_PlayerKernalModel Eve_PlayerExtend;
+        public static event Del_PlayerExtendModel Eve_PlayerExtend;
 
 
         private int Int_Experience;

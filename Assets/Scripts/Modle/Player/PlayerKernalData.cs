@@ -207,7 +207,7 @@ namespace Modle
                 Flo_DexterityByProp = value;
                 if (Eve_PlayerKernal != null)
                 {
-                    KeyValueUpdate kv = new KeyValueUpdate("Magic", FloMagic);
+                    KeyValueUpdate kv = new KeyValueUpdate("DexterityByProp", FloDexterityByProp);
                     Eve_PlayerKernal(kv);
                 }
             }

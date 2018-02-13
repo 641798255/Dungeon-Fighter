@@ -46,7 +46,7 @@ namespace Control
             if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_NORMAL)
             {
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.NormalAttack);
-                if (UnityHelper.GetInstance().GetSmallTime(GlobleParameter.INTERVAL_TIME_0DOT2))
+                //if (UnityHelper.GetInstance().GetSmallTime(GlobleParameter.INTERVAL_TIME_0DOT2))
                 {
                     AttackEnemyByNormal();
                 }
@@ -149,7 +149,7 @@ namespace Control
                     float floDirection = Vector3.Dot(direction, this.gameObject.transform.forward);
                     if (floDirection > 0 && floDistance <= _FloRealAttackArea)
                     {
-                        goEnemy.SendMessage("OnHurt", 3, SendMessageOptions.DontRequireReceiver);
+                        goEnemy.SendMessage("OnHurt", Ctrl_HeroProperty.Instance.GetCurrentATK(), SendMessageOptions.DontRequireReceiver);
                     }
                 }
             }

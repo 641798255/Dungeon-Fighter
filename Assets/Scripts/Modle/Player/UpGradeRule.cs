@@ -103,14 +103,15 @@ namespace Modle
         //核心数据增量
         private void UpGradeRuleOperation(float maxHp, float maxMp, float maxAtk, float maxDef, float maxFex)
         {
+            PlayerKernalDataProxy.GetInstance().IncreaseHealthValue(PlayerKernalDataProxy.GetInstance().GetMaxHealth());
+            PlayerKernalDataProxy.GetInstance().IncreaseMagicValue(PlayerKernalDataProxy.GetInstance().GetMaxMagic());
             PlayerKernalDataProxy.GetInstance().IncreaseMaxHealth(maxHp);
-            PlayerKernalDataProxy.GetInstance().IncreaseMaxHealth(maxMp);
-            PlayerKernalDataProxy.GetInstance().IncreaseMaxHealth(maxAtk);
-            PlayerKernalDataProxy.GetInstance().IncreaseMaxHealth(maxDef);
-            PlayerKernalDataProxy.GetInstance().IncreaseMaxHealth(maxFex);
+            PlayerKernalDataProxy.GetInstance().IncreaseMaxMagic(maxMp);
+            PlayerKernalDataProxy.GetInstance().IncreaseMaxATK(maxAtk);
+            PlayerKernalDataProxy.GetInstance().IncreaseMaxDefence(maxDef);
+            PlayerKernalDataProxy.GetInstance().IncreaseMaxDexterity(maxFex);
 
-            PlayerKernalDataProxy.GetInstance().IncreaseMaxHealth(PlayerKernalDataProxy.GetInstance().GetCurrentHealth());
-            PlayerKernalDataProxy.GetInstance().IncreaseMaxMagic(PlayerKernalDataProxy.GetInstance().GetCurrentMagic());
+         
         }
     }
 }
