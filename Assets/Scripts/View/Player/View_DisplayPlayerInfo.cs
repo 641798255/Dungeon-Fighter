@@ -78,8 +78,8 @@ namespace View
         {
             if (kv.Key.Equals("Health"))
             {
-                Txt_CurHp.text = kv.Value.ToString();
-                Txt_Detail_CurHp.text = kv.Value.ToString();
+                Txt_CurHp.text = Mathf.RoundToInt((float)kv.Value).ToString();
+                Txt_Detail_CurHp.text = Mathf.RoundToInt((float)kv.Value).ToString();
                 Sli_Hp.value = (float)kv.Value;
             }
         }
@@ -88,8 +88,8 @@ namespace View
         {
             if (kv.Key.Equals("Magic"))
             {
-                Txt_CurMp.text = kv.Value.ToString();
-                Txt_Detail_CurMp.text = kv.Value.ToString();
+                Txt_CurMp.text = Mathf.RoundToInt((float)kv.Value).ToString();
+                Txt_Detail_CurMp.text = Mathf.RoundToInt((float)kv.Value).ToString();
                 Sli_Mp.value = (float) kv.Value;
             }
         }
@@ -98,7 +98,7 @@ namespace View
         {
             if (kv.Key.Equals("Attack"))
             {
-                Txt_Detail_CurATK.text = kv.Value.ToString();
+                Txt_Detail_CurATK.text = Mathf.RoundToInt((float)kv.Value).ToString();
             }
         }
 
@@ -106,7 +106,7 @@ namespace View
         {
             if (kv.Key.Equals("Defence"))
             {
-                Txt_Detail_CurDef.text = kv.Value.ToString();
+                Txt_Detail_CurDef.text = Mathf.RoundToInt((float)kv.Value).ToString();
             }
         }
 
@@ -114,7 +114,7 @@ namespace View
         {
             if (kv.Key.Equals("Dexterity"))
             {
-                Txt_Detail_CurDex.text = kv.Value.ToString();
+                Txt_Detail_CurDex.text = Mathf.RoundToInt((float)kv.Value).ToString();
             }
         }
 
@@ -122,8 +122,8 @@ namespace View
         {
             if (kv.Key.Equals("MaxHealth"))
             {
-                Txt_MaxHp.text = kv.Value.ToString();
-                Txt_Detail_MaxHp.text = kv.Value.ToString();
+                Txt_MaxHp.text = Mathf.RoundToInt((float)kv.Value).ToString();
+                Txt_Detail_MaxHp.text = Mathf.RoundToInt((float)kv.Value).ToString();
                 Sli_Hp.maxValue = (float)kv.Value;
                 Sli_Hp.minValue = 0;
             }
@@ -133,8 +133,8 @@ namespace View
         {
             if (kv.Key.Equals("MaxMagic"))
             {
-                Txt_MaxMp.text = kv.Value.ToString();
-                Txt_Detail_MaxMp.text = kv.Value.ToString();
+                Txt_MaxMp.text = Mathf.RoundToInt((float)kv.Value).ToString();
+                Txt_Detail_MaxMp.text = Mathf.RoundToInt((float)kv.Value).ToString();
                 Sli_Mp.maxValue = (float) kv.Value;
                 Sli_Mp.minValue = 0;
             }
@@ -144,7 +144,7 @@ namespace View
         {
             if (kv.Key.Equals("MaxAttack"))
             {
-                Txt_Detail_MaxATK.text = kv.Value.ToString();
+                Txt_Detail_MaxATK.text = Mathf.RoundToInt((float)kv.Value).ToString();
             }
         }
 
@@ -152,7 +152,7 @@ namespace View
         {
             if (kv.Key.Equals("MaxDefence"))
             {
-                Txt_Detail_MaxDef.text = kv.Value.ToString();
+                Txt_Detail_MaxDef.text = Mathf.RoundToInt((float)kv.Value).ToString();
             }
         }
 
@@ -160,7 +160,7 @@ namespace View
         {
             if (kv.Key.Equals("MaxDexterity"))
             {
-                Txt_Detail_MaxDex.text = kv.Value.ToString();
+                Txt_Detail_MaxDex.text = Mathf.RoundToInt((float)kv.Value).ToString();
             }
         }
 

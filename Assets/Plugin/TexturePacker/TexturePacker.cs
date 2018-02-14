@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 using System.Collections;
@@ -122,3 +123,5 @@ public class TexturePacker : ScriptableWizard
         DestroyImmediate(AtlasObject);
     }
 }
+
+#endif

@@ -22,6 +22,11 @@ namespace View
             Go_PlayerDetailInfoPanel.SetActive(!Go_PlayerDetailInfoPanel.activeSelf);
         }
 
+        public void ExitGame()
+        {
+            Application.Quit();
+        }
+
         #region 响应玩家虚拟按键点击
 
         public void ResponseATKByNormal()

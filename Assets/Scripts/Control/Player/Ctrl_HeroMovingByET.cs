@@ -16,12 +16,28 @@ namespace Control
         //public AnimationClip Ani_Idle;
         //public AnimationClip Ani_Running;
         public float Flo_MoveSpeed=5;
+        public float Flo_MoveByAttackSpeed = 10f;
         public float Flo_Gravity=1;
         CharacterController CC;
 
         private void Start()
         {
             CC=this.GetComponent<CharacterController>();
+            StartCoroutine("MoveByAttack");
+        }
+
+        IEnumerator MoveByAttack()
+        {
+            yield return new WaitForSeconds(GlobleParameter.INTERVAL_TIME_0DOT5);
+            while (true)
+            {
+                yield return new WaitForSeconds(GlobleParameter.INTERVAL_TIME_0DOT5);
+                if (Ctrl_HeroAnimation.Instance.CurrentActionState == HeroActionState.NormalAttack)
+                {
+                    Vector3 vec = transform.forward * Flo_MoveByAttackSpeed * Time.deltaTime;
+                    CC.Move(vec);
+                }
+            }
         }
         #region 事件注册
         void OnEnable()
@@ -36,6 +52,7 @@ namespace Control
         {
             if (move.joystickName != GlobleParameter.JOYSTICK_NAME)
             {
+
                 return;
             }
 
@@ -46,19 +63,25 @@ namespace Control
             if (joyPositionY != 0 || joyPositionX != 0)
             {
                 //设置角色的朝向（朝向当前坐标+摇杆偏移量）  
-                transform.LookAt(new Vector3(transform.position.x - joyPositionX, transform.position.y, transform.position.z - joyPositionY));
+                if (Ctrl_HeroAnimation.Instance.CurrentActionState == HeroActionState.Idle || Ctrl_HeroAnimation.Instance.CurrentActionState == HeroActionState.Running)
+                {
+                    transform.LookAt(new Vector3(transform.position.x - joyPositionX, transform.position.y, transform.position.z - joyPositionY));
+                }
                 //移动玩家的位置（按朝向位置移动）  
                 Vector3 moveDirection = transform.forward * Time.deltaTime * Flo_MoveSpeed;
                 moveDirection.y -= Flo_Gravity;
-                CC.Move(moveDirection);
+               
                 //transform.Translate(Vector3.forward * Time.deltaTime * 5);
                 //播放奔跑动画  
                 //GetComponent<Animation>().CrossFade(Ani_Running.name);
-                if (UnityHelper.GetInstance().GetSmallTime(GlobleParameter.INTERVAL_TIME_0DOT1))
+                if (Ctrl_HeroAnimation.Instance.CurrentActionState == HeroActionState.Idle || Ctrl_HeroAnimation.Instance.CurrentActionState == HeroActionState.Running)
                 {
-                    Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.Running);
+                    CC.Move(moveDirection);
+                    if (UnityHelper.GetInstance().GetSmallTime(GlobleParameter.INTERVAL_TIME_0DOT2))
+                    {
+                        Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.Running);
+                    }
                 }
-                    
             }
         }
 
@@ -68,9 +91,11 @@ namespace Control
             
             if (move.joystickName == GlobleParameter.JOYSTICK_NAME)
             {
-                //GetComponent<Animation>().CrossFade(Ani_Idle.name);
-                Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.Idle);
-
+                if (Ctrl_HeroAnimation.Instance.CurrentActionState == HeroActionState.Idle || Ctrl_HeroAnimation.Instance.CurrentActionState == HeroActionState.Running)
+                {
+                    //GetComponent<Animation>().CrossFade(Ani_Idle.name);
+                    Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.Idle);
+                }
             }
         }
 

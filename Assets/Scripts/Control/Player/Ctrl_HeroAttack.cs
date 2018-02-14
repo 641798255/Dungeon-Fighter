@@ -25,6 +25,22 @@ namespace Control
         float _FloMaxDistance=10;     //敌我最大距离，大于这个距离不再标记为敌人
         public float _FloMinDistance = 4;    //最小关注距离，当小于这个距离就要开始关注
         public float _FloRealAttackArea=2;   //实际有效攻击距离
+      
+
+        //大招攻击参数
+        public float FloAttackAreaByMagicA = 5;
+        public float FloAttackAreaByMagicB = 8;
+        public float FloAttackAreaByMagicC = 5;
+        public float FloAttackAreaByMagicD = 8;
+        //大招攻击力倍率
+        public int IntAttackPowerMultipleByMagicA = 5;
+        public int IntAttackPowerMultipleByMagicB =20;
+        public int IntAttackPowerMultipleByMagicC = 5;
+        public int IntAttackPowerMultipleByMagicD = 20;
+
+
+
+
 
         private void Awake()
         {
@@ -68,6 +84,7 @@ namespace Control
             if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICA)
             {
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickA);
+                AttackEnemyByMagicA();
             }
         }
         void RespnseMagicTrickB(string controlType)
@@ -75,6 +92,7 @@ namespace Control
             if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICB)
             {
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickB);
+                AttackEnemyByMagicB();
             }
         }
         void RespnseMagicTrickC(string controlType)
@@ -82,6 +100,7 @@ namespace Control
             if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICC)
             {
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickC);
+                AttackEnemyByMagicC();
             }
         }
         void RespnseMagicTrickD(string controlType)
@@ -89,6 +108,7 @@ namespace Control
             if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICD)
             {
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickD);
+                AttackEnemyByMagicD();
             }
         }
         #endregion
@@ -115,7 +135,8 @@ namespace Control
                     if (distance < _FloMinDistance)
                     {
                         //this.transform.LookAt(_TraNearestEnemy);
-                        this.transform.rotation = Quaternion.Slerp(this.transform.rotation,Quaternion.LookRotation(new Vector3(_TraNearestEnemy.position.x,0,_TraNearestEnemy.position.z)-new Vector3(this.gameObject.transform.position.x,0,this.gameObject.transform.position.z)),HeroRotationSpeed);
+                        //this.transform.rotation = Quaternion.Slerp(this.transform.rotation,Quaternion.LookRotation(new Vector3(_TraNearestEnemy.position.x,0,_TraNearestEnemy.position.z)-new Vector3(this.gameObject.transform.position.x,0,this.gameObject.transform.position.z)),HeroRotationSpeed);
+                        UnityHelper.GetInstance().FaceToTarget(this.transform,_TraNearestEnemy,HeroRotationSpeed);
                     }
                 }
             }
@@ -129,7 +150,7 @@ namespace Control
             foreach (GameObject goItem in goEnemys)
             {
                 //判断敌人是否存活
-                Ctrl_Warrior_Property enemy = goItem.GetComponent<Ctrl_Warrior_Property>();
+                Ctrl_BaseEnemyProperty enemy = goItem.GetComponent<Ctrl_BaseEnemyProperty>();
                 if (enemy != null && enemy.CurrentState!=SimpleEnemyState.Death)
                 {
                     _LisEnemys.Add(goItem);
@@ -144,7 +165,7 @@ namespace Control
             {
                 foreach (GameObject goEnemy in _LisEnemys)
                 {
-                    if (goEnemy.GetComponent<Ctrl_Warrior_Property>().CurrentState!=SimpleEnemyState.Death)
+                    if (goEnemy.GetComponent<Ctrl_BaseEnemyProperty>().CurrentState!=SimpleEnemyState.Death)
                     {
                         float distance = Vector3.Distance(this.gameObject.transform.position, goEnemy.transform.position);
                         if (distance < _FloMaxDistance)
@@ -159,34 +180,37 @@ namespace Control
 
         void AttackEnemyByNormal()
         {
-            if (_LisEnemys == null || _LisEnemys.Count <= 0)
-            {
-                _TraNearestEnemy = null;
-                return;
-            }
-
-            foreach (GameObject goEnemy in _LisEnemys)
-            {
-                if (goEnemy!=null)
-                {
-                    float floDistance = Vector3.Distance(this.gameObject.transform.position, goEnemy.transform.position);
-                    Vector3 direction = (goEnemy.transform.position - this.gameObject.transform.position).normalized;
-                    float floDirection = Vector3.Dot(direction, this.gameObject.transform.forward);
-                    if (floDirection > 0 && floDistance <= _FloRealAttackArea)
-                    {
-                        goEnemy.SendMessage("OnHurt", Ctrl_HeroProperty.Instance.GetCurrentATK(), SendMessageOptions.DontRequireReceiver);
-                    }
-                }
-            }
+            AttackEnemy(_LisEnemys, _TraNearestEnemy, _FloRealAttackArea, 1, true);
         }
 
+        //AOE技能
         void AttackEnemyByMagicA()
         {
+            AttackEnemy(_LisEnemys, _TraNearestEnemy, FloAttackAreaByMagicA, IntAttackPowerMultipleByMagicA,false);
+
         }
 
+        //方向性技能
         void AttackEnemyByMagicB()
         {
+            AttackEnemy(_LisEnemys, _TraNearestEnemy, FloAttackAreaByMagicB, IntAttackPowerMultipleByMagicB, true);
         }
+
+        //AOE技能
+        void AttackEnemyByMagicC()
+        {
+            AttackEnemy(_LisEnemys, _TraNearestEnemy, FloAttackAreaByMagicC, IntAttackPowerMultipleByMagicC, false);
+
+        }
+
+        //方向性技能
+        void AttackEnemyByMagicD()
+        {
+            AttackEnemy(_LisEnemys, _TraNearestEnemy, FloAttackAreaByMagicD, IntAttackPowerMultipleByMagicD, true);
+
+        }
+
+
     }
 }
 
