@@ -73,6 +73,7 @@ namespace Control
             if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_NORMAL)
             {
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.NormalAttack);
+                //Ctrl_HeroAnimation.Instance.ChangeCanAsk();
                 //if (UnityHelper.GetInstance().GetSmallTime(GlobleParameter.INTERVAL_TIME_0DOT2))
                 {
                     AttackEnemyByNormal();
@@ -84,7 +85,8 @@ namespace Control
             if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICA)
             {
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickA);
-                AttackEnemyByMagicA();
+                Ctrl_HeroAnimation.Instance.ChangeCanAsk();
+                StartCoroutine("AttackEnemyByMagicA");
             }
         }
         void RespnseMagicTrickB(string controlType)
@@ -92,7 +94,9 @@ namespace Control
             if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICB)
             {
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickB);
-                AttackEnemyByMagicB();
+                Ctrl_HeroAnimation.Instance.ChangeCanAsk();
+                StartCoroutine("AttackEnemyByMagicB");
+
             }
         }
         void RespnseMagicTrickC(string controlType)
@@ -100,7 +104,8 @@ namespace Control
             if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICC)
             {
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickC);
-                AttackEnemyByMagicC();
+                StartCoroutine("AttackEnemyByMagicC");
+
             }
         }
         void RespnseMagicTrickD(string controlType)
@@ -108,7 +113,8 @@ namespace Control
             if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICD)
             {
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickD);
-                AttackEnemyByMagicD();
+                StartCoroutine("AttackEnemyByMagicD");
+
             }
         }
         #endregion
@@ -184,28 +190,35 @@ namespace Control
         }
 
         //AOE技能
-        void AttackEnemyByMagicA()
+        IEnumerator AttackEnemyByMagicA()
         {
+            yield return new WaitForSeconds(GlobleParameter.INTERVAL_TIME_1);
             AttackEnemy(_LisEnemys, _TraNearestEnemy, FloAttackAreaByMagicA, IntAttackPowerMultipleByMagicA,false);
 
         }
 
         //方向性技能
-        void AttackEnemyByMagicB()
+        IEnumerator AttackEnemyByMagicB()
         {
+            yield return new WaitForSeconds(GlobleParameter.INTERVAL_TIME_1);
+
             AttackEnemy(_LisEnemys, _TraNearestEnemy, FloAttackAreaByMagicB, IntAttackPowerMultipleByMagicB, true);
         }
 
         //AOE技能
-        void AttackEnemyByMagicC()
+        IEnumerator AttackEnemyByMagicC()
         {
+            yield return new WaitForSeconds(GlobleParameter.INTERVAL_TIME_1);
+
             AttackEnemy(_LisEnemys, _TraNearestEnemy, FloAttackAreaByMagicC, IntAttackPowerMultipleByMagicC, false);
 
         }
 
         //方向性技能
-        void AttackEnemyByMagicD()
+        IEnumerator AttackEnemyByMagicD()
         {
+            yield return new WaitForSeconds(GlobleParameter.INTERVAL_TIME_1);
+
             AttackEnemy(_LisEnemys, _TraNearestEnemy, FloAttackAreaByMagicD, IntAttackPowerMultipleByMagicD, true);
 
         }

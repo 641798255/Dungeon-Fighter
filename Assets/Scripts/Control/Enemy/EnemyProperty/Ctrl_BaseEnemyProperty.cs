@@ -35,11 +35,21 @@ namespace Control
             }
         }
 
+        private void OnEnable()
+        {
+            StartCoroutine("CheckLifeCountinue");
+        }
+
+        private void OnDisable()
+        {
+            StopCoroutine("CheckLifeCountinue");
+        }
+
         public  void ExcuteInChild()
         {
             Flo_CurrentHealth = Int_MaxHealth;
             //判断是否生命存活
-            StartCoroutine("CheckLifeCountinue");
+          
 
         }
 
@@ -55,8 +65,9 @@ namespace Control
                     //改变英雄属性
                     Ctrl_HeroProperty.Instance.AddExp(Int_HeroExperience);
                     Ctrl_HeroProperty.Instance.AddKillNumber();
-                    yield return new WaitForSeconds(5);
-                    Destroy(this.gameObject);
+                    //yield return new WaitForSeconds(5);
+                    //Destroy(this.gameObject);
+                    yield return StartCoroutine("RecoverEnemy");
                 }
             }
         }
@@ -73,6 +84,15 @@ namespace Control
                     Flo_CurrentHealth -= temHurtValue;
                 }
             }
+        }
+
+        IEnumerator RecoverEnemy()
+        {
+            yield return new WaitForSeconds(3);
+            //敌人回收前的状态重置
+            Flo_CurrentHealth = Int_MaxHealth;
+            _CurrentState = SimpleEnemyState.Idle;
+            PoolManager.PoolsArray["Enemys"].RecoverGameObjectToPool(this.gameObject);
         }
     }
 }

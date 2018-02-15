@@ -53,6 +53,26 @@ namespace Control
                 }
             }
         }
+
+        //重构粒子特效播放方法
+        protected IEnumerator LoadParticalEffect(float intervalTime,string strPath,bool IsCatch,Vector3 position,Transform parent,string audio=null,float lifeDuring=0)
+        {
+            yield return new WaitForSeconds(intervalTime);
+            GameObject goMagicAEffect = ResourcesMgr.GetInstance().LoadAsset(strPath, IsCatch);
+            goMagicAEffect.transform.position = position;
+            if (parent != null)
+            {
+                goMagicAEffect.transform.parent = parent;
+            }
+            if (!string.IsNullOrEmpty(audio))
+            {
+                AudioManager.PlayAudioEffectA(audio);
+            }
+            if (lifeDuring > 0)
+            {
+                Destroy(goMagicAEffect, lifeDuring);
+            }
+        }
     }
 }
 

@@ -98,7 +98,7 @@ namespace Kernal
         /// 播放音效_音频源A
         /// </summary>
         /// <param name="audioClip">音频剪辑</param>
-        private static void PlayAudioEffectA(AudioClip audioClip)
+        public static void PlayAudioEffectA(AudioClip audioClip)
         {
             //处理全局音效音量
             _AudioSource_AudioEffectA.volume = AudioEffectVolumns;
@@ -118,7 +118,7 @@ namespace Kernal
         /// 播放音效_音频源B
         /// </summary>
         /// <param name="audioClip">音频剪辑</param>
-        private static void PlayAudioEffectB(AudioClip audioClip)
+        public static void PlayAudioEffectB(AudioClip audioClip)
         {
             //处理全局音效音量
             _AudioSource_AudioEffectB.volume = AudioEffectVolumns;

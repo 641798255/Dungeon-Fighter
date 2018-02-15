@@ -26,9 +26,23 @@ namespace Control
             {
                 HeroProperty = goHero.GetComponent<Ctrl_HeroProperty>();
             }
+        }
+
+        private void OnEnable()
+        {
+            IsSingleTime = true;
             StartCoroutine("PlayWarriorAnimationA");
             StartCoroutine("PlayWarriorAnimationB");
+        }
 
+        private void OnDisable()
+        {
+            StopCoroutine("PlayWarriorAnimationA");
+            StopCoroutine("PlayWarriorAnimationB");
+            if (MyAnimator!=null)
+            {
+                MyAnimator.SetTrigger("Recover");
+            }
         }
 
         IEnumerator PlayWarriorAnimationA()
@@ -51,12 +65,6 @@ namespace Control
                         MyAnimator.SetFloat("MoveSpeed", 0);
                         MyAnimator.SetBool("Attack", true);
                         break;
-                    //case SimpleEnemyState.Hurt:
-                    //    MyAnimator.SetTrigger("Hurt");
-                    //    break;
-                    //case SimpleEnemyState.Death:
-                    //    MyAnimator.SetTrigger("Dead");
-                    //    break;
                     default:
                         break;
                 }
@@ -71,20 +79,9 @@ namespace Control
                 yield return new WaitForSeconds(GlobleParameter.INTERVAL_TIME_1);
                 switch (MyProperty.CurrentState)
                 {
-                    //case SimpleEnemyState.Idle:
-                    //    MyAnimator.SetFloat("MoveSpeed", 0);
-                    //    MyAnimator.SetBool("Attack", false);
-                    //    break;
-                    //case SimpleEnemyState.Walking:
-                    //    MyAnimator.SetFloat("MoveSpeed", 1);
-                    //    MyAnimator.SetBool("Attack", false);
-                    //    break;
-                    //case SimpleEnemyState.Attack:
-                    //    MyAnimator.SetFloat("MoveSpeed", 0);
-                    //    MyAnimator.SetBool("Attack", true);
-                    //    break;
                     case SimpleEnemyState.Hurt:
                         MyAnimator.SetTrigger("Hurt");
+                        //MyProperty.CurrentState = SimpleEnemyState.Idle;
                         break;
                     case SimpleEnemyState.Death:
                         if (IsSingleTime)
@@ -103,6 +100,11 @@ namespace Control
         public void AttackHeroByAnimationEvent()
         {
             HeroProperty.DecreasehealthValue(MyProperty.IntATK);
+        }
+
+        public IEnumerator AnimationEvent_WarriorHurt()
+        {
+            yield return StartCoroutine(LoadParticalEffect(GlobleParameter.INTERVAL_TIME_0DOT1, "ParticleProps/EnemyHurt1", true, transform.position, transform, null, 0));
         }
     }
 }

@@ -36,9 +36,20 @@ namespace Control
             FloAttackDistance = UnityHelper.GetInstance().GetRandomNum(2,3);
             FLoAlertDistance = UnityHelper.GetInstance().GetRandomNum(4,10);
             FloThinkInterval = UnityHelper.GetInstance().GetRandomNum(1,3);
+        
+
+        }
+
+        private void OnEnable()
+        {
             StartCoroutine("ThinkProcess");
             StartCoroutine("MovingProcess");
+        }
 
+        private void OnDisable()
+        {
+            StopCoroutine("ThinkProcess");
+            StopCoroutine("MovingProcess");
         }
 
         IEnumerator ThinkProcess()
