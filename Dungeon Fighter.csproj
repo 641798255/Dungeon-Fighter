@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.2.2f1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -54,17 +52,11 @@
     <Reference Include="UnityEngine">
       <HintPath>D:/unity5.2/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>D:/unity5.2/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/unity5.2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>D:/unity5.2/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>D:/unity5.2/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
       <HintPath>D:/unity5.2/Editor/Data/Managed/UnityEditor.dll</HintPath>
@@ -232,6 +224,9 @@
     <Compile Include="Assets\Scripts\Globle\GlobleParameterMgr.cs" />
     <Compile Include="Assets\Scripts\Kernal\AudioManager.cs" />
     <Compile Include="Assets\Scripts\Kernal\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\Kernal\Dialog\DialogDataFormat.cs" />
+    <Compile Include="Assets\Scripts\Kernal\Dialog\DialogDataMgr.cs" />
+    <Compile Include="Assets\Scripts\Kernal\Dialog\XMLDialogsDataAnalysisMgr.cs" />
     <Compile Include="Assets\Scripts\Kernal\Exception\XMLAnalysisException.cs" />
     <Compile Include="Assets\Scripts\Kernal\KernalParameter.cs" />
     <Compile Include="Assets\Scripts\Kernal\Logger\ConfigManager.cs" />
@@ -246,6 +241,7 @@
     <Compile Include="Assets\Scripts\Modle\Player\PlayerKernalData.cs" />
     <Compile Include="Assets\Scripts\Modle\Player\PlayerKernalDataProxy.cs" />
     <Compile Include="Assets\Scripts\Modle\Player\UpGradeRule.cs" />
+    <Compile Include="Assets\Scripts\Test\TestDialog.cs" />
     <Compile Include="Assets\Scripts\View\Player\View_DisplayPlayerInfo.cs" />
     <Compile Include="Assets\Scripts\View\Player\View_PlayerInfoResponse.cs" />
     <Compile Include="Assets\Scripts\View\Prop\View_ATKBtnCDEffect.cs" />
@@ -327,9 +323,8 @@
     <None Include="Assets\Resources\Models\Maps\VW_ActionRPG_AssetPack\Standard Assets\Projectors\Sources\Shaders\Projector Light.shader" />
     <None Include="Assets\Resources\Models\SwordsMan\SwordsManResources\SwordsEffectResoures\ToolResources\EffectShader\FXMaker_Mask Additive Tint.shader" />
     <None Include="Assets\Resources\ParticleProps\FightingParticalSystem\ToolResources\DefaultShaderMaterials Unlisted\Caizhi\EffectShader\FXMaker_Mask Additive.shader" />
-    <None Include="Assets\StreamingAssets\SystemConfigInfo.xml">
-      <SubType>Designer</SubType>
-    </None>
+    <None Include="Assets\StreamingAssets\SystemConfigInfo.xml" />
+    <None Include="Assets\StreamingAssets\SystemDialogsInfo.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

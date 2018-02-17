@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.2.2f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -55,9 +57,6 @@
     <Reference Include="UnityEditor">
       <HintPath>D:/unity5.2/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>D:/unity5.2/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>D:/unity5.2/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -72,9 +71,6 @@
     </Reference>
     <Reference Include="UnityEditor.Networking">
       <HintPath>D:/unity5.2/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>D:/unity5.2/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>D:/unity5.2/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
@@ -121,10 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Dungeon Fighter.csproj">
-      <Project>{920FD954-120F-E006-F5CF-D1B0AB5769BF}</Project>
-      <Name>Dungeon Fighter</Name>
-    </ProjectReference>
-    <ProjectReference Include="Dungeon Fighter.unityproj">
       <Project>{920FD954-120F-E006-F5CF-D1B0AB5769BF}</Project>
       <Name>Dungeon Fighter</Name>
     </ProjectReference>
@@ -214,6 +206,7 @@
     <None Include="Assets\Resources\Models\SwordsMan\SwordsManResources\SwordsEffectResoures\ToolResources\EffectShader\FXMaker_Mask Additive Tint.shader" />
     <None Include="Assets\Resources\ParticleProps\FightingParticalSystem\ToolResources\DefaultShaderMaterials Unlisted\Caizhi\EffectShader\FXMaker_Mask Additive.shader" />
     <None Include="Assets\StreamingAssets\SystemConfigInfo.xml" />
+    <None Include="Assets\StreamingAssets\SystemDialogsInfo.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

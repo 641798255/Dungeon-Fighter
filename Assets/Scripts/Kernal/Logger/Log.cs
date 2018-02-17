@@ -25,32 +25,49 @@ namespace Kernal
         //日志缓存最大容量
         private static int _LogBufferMaxNumber;
 
+        //XML配置文件标签常量
+        private   const  string XML_CONFIG_LOG_PATH = "LogPath";
+        private const string XML_CONFIG_LOG_STATE = "LogState";
+        private const string XML_CONFIG_LOG_MAXCAPACITY = "LogMaxCapacity";
+        private const string XML_CONFIG_LOG_BUFFERNUMBER = "LogBufferNumber";
+
+        private const string XML_CONFIG_LOG_STATE_DEVELOP = "Develop";
+        private const string XML_CONFIG_LOG_STATE_SPECIAL = "Special";
+        private const string XML_CONFIG_LOG_STATE_DEPLOY = "Deploy";
+        private const string XML_CONFIG_LOG_STATE_STOP = "Stop";
+
+        private const string XML_CONFIG_LOG_DEFAULT_PATH = "DungeonFighterLog.txt";
+        private const int XML_CONFIG_LOG_DEFAULT_MAX_CAPCITY_NUMBER = 2000;
+        private const int XML_CONFIG_LOG_DEFAULT_BUUFER_NUMBER = 1;
+
         static Log()
         {
             _LisLogArray = new List<string>();
-            IConfigManager configMgr = new ConfigManager(KernalParameter.SystemConfiginfo_LogPath,KernalParameter.SystemConfiginfo_LogRootNodeName);
+#if UNITY_STANDALONE_WIN
             //日志文件路径
-            _LogPath = configMgr.AppSetting["LogPath"];
+            IConfigManager configMgr = new ConfigManager(KernalParameter.SystemConfiginfo_LogPath,KernalParameter.SystemConfiginfo_LogRootNodeName);
+            _LogPath = configMgr.AppSetting[XML_CONFIG_LOG_PATH];
+
             if (string.IsNullOrEmpty(_LogPath))
             {
-                _LogPath = UnityEngine.Application.persistentDataPath + "\\DungeonFighterLog.txt";
+                _LogPath = UnityEngine.Application.persistentDataPath + "\\"+ XML_CONFIG_LOG_DEFAULT_PATH;
             }
             //日志部署模式
-            string strLogState = configMgr.AppSetting["LogState"];
+            string strLogState = configMgr.AppSetting[XML_CONFIG_LOG_STATE];
             if (!string.IsNullOrEmpty(strLogState))
             {
                 switch (strLogState)
                 {
-                    case "Develop":
+                    case XML_CONFIG_LOG_STATE_DEVELOP:
                         _LogState = State.Develop;
                         break;
-                    case "Special":
+                    case XML_CONFIG_LOG_STATE_SPECIAL:
                         _LogState = State.Special;
                         break;
-                    case "Deploy":
+                    case XML_CONFIG_LOG_STATE_DEPLOY:
                         _LogState = State.Deploy;
                         break;
-                    case "Stop":
+                    case XML_CONFIG_LOG_STATE_STOP:
                         _LogState = State.Stop;
                         break;
                     default:
@@ -63,27 +80,27 @@ namespace Kernal
                 _LogState = State.Stop;
             }
             //日志最大容量
-            string strLogMaxCapacity = configMgr.AppSetting["LogMaxCapacity"];
+            string strLogMaxCapacity = configMgr.AppSetting[XML_CONFIG_LOG_MAXCAPACITY];
             if (!string.IsNullOrEmpty(strLogMaxCapacity))
             {
                 _LogMaxCapacity = Convert.ToInt32(strLogMaxCapacity);
             }
             else
             {
-                _LogMaxCapacity = 2000;
+                _LogMaxCapacity = XML_CONFIG_LOG_DEFAULT_MAX_CAPCITY_NUMBER;
             }
 
             //日志缓存最大容量
-            string strLogBufferMaxNumber = configMgr.AppSetting["LogBufferNumber"];
+            string strLogBufferMaxNumber = configMgr.AppSetting[XML_CONFIG_LOG_BUFFERNUMBER];
             if (!string.IsNullOrEmpty(strLogBufferMaxNumber))
             {
                 _LogBufferMaxNumber = Convert.ToInt32(strLogBufferMaxNumber);
             }
             else
             {
-                _LogBufferMaxNumber = 1;
+                _LogBufferMaxNumber = XML_CONFIG_LOG_DEFAULT_BUUFER_NUMBER;
             }
-
+#endif
 
             //创建文件
             if (!File.Exists(_LogPath))
@@ -177,7 +194,32 @@ namespace Kernal
            
         }
 
-        private static void SyncLogArrayToFile()
+
+
+        #region 重要管理方法
+        //查询日志缓存中所有数据
+        public static List<string> QueryAllDateFromBuffer()
+        {
+            if (_LisLogArray != null)
+            {
+                return _LisLogArray;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        //清除实体日志文件与日志缓存中所有数据
+        public static void ClearLogFileAndBufferData()
+        {
+            if (_LisLogArray!=null)
+            {
+                _LisLogArray.Clear();
+            }
+            SyncLogArrayToFile();
+        }
+        //同步缓存数据信息到实体文件中
+        public static void SyncLogArrayToFile()
         {
             if (!string.IsNullOrEmpty(_LogPath))
             {
@@ -189,6 +231,7 @@ namespace Kernal
                 sw.Close();
             }
         }
+        #endregion
 
         #region 本类枚举类型
         /// <summary>

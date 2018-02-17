@@ -5,6 +5,7 @@
 */
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 using Globle;
@@ -17,23 +18,8 @@ namespace View
         AsyncOperation _AsyncOper;
         float _FloProgressNumber;
 
-        private void Start()
+        void Start()
         {
-            Log.Write("我的日志系统开始运行了");
-            Log.Write("我的日志系统开始运行了",Log.Level.Special);
-            Log.Write("我的日志系统开始运行了",Log.Level.High);
-       
-
-            //测试ConfigManager类
-            //ConfigManager configMgr = new ConfigManager(KernalParameter.SystemConfiginfo_LogPath,KernalParameter.SystemConfiginfo_LogRootNodeName);
-            //string strLogPath=configMgr.AppSetting["LogPath"];
-            //string strLogState = configMgr.AppSetting["LogState"];
-            //string strLogMaxCapacity = configMgr.AppSetting["LogMaxCapacity"];
-            //string strLogBufferNumber = configMgr.AppSetting["LogBufferNumber"];
-            //print(strLogPath);
-            //print(strLogState);
-            //print(strLogMaxCapacity);
-            //print(strLogBufferNumber);
             //调试进入指定关卡
             GlobleParameterMgr.Nextscenes = ScenesEnum.LevelOne;
             StartCoroutine("LoadingScenesProgress");
