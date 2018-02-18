@@ -43,9 +43,9 @@ namespace Kernal
         static Log()
         {
             _LisLogArray = new List<string>();
-#if UNITY_STANDALONE_WIN
+#if UNITY_STANDALONE_WIN||UNITY_EDITOR
             //日志文件路径
-            IConfigManager configMgr = new ConfigManager(KernalParameter.SystemConfiginfo_LogPath,KernalParameter.SystemConfiginfo_LogRootNodeName);
+            IConfigManager configMgr = new ConfigManager(KernalParameter.GetlogPath(),KernalParameter.GetlogRootNodeName());
             _LogPath = configMgr.AppSetting[XML_CONFIG_LOG_PATH];
 
             if (string.IsNullOrEmpty(_LogPath))
@@ -54,6 +54,11 @@ namespace Kernal
             }
             //日志部署模式
             string strLogState = configMgr.AppSetting[XML_CONFIG_LOG_STATE];
+            //日志最大容量
+            string strLogMaxCapacity = configMgr.AppSetting[XML_CONFIG_LOG_MAXCAPACITY];
+            //日志缓存最大容量
+            string strLogBufferMaxNumber = configMgr.AppSetting[XML_CONFIG_LOG_BUFFERNUMBER];
+//#endif
             if (!string.IsNullOrEmpty(strLogState))
             {
                 switch (strLogState)
@@ -79,8 +84,7 @@ namespace Kernal
             {
                 _LogState = State.Stop;
             }
-            //日志最大容量
-            string strLogMaxCapacity = configMgr.AppSetting[XML_CONFIG_LOG_MAXCAPACITY];
+
             if (!string.IsNullOrEmpty(strLogMaxCapacity))
             {
                 _LogMaxCapacity = Convert.ToInt32(strLogMaxCapacity);
@@ -90,8 +94,7 @@ namespace Kernal
                 _LogMaxCapacity = XML_CONFIG_LOG_DEFAULT_MAX_CAPCITY_NUMBER;
             }
 
-            //日志缓存最大容量
-            string strLogBufferMaxNumber = configMgr.AppSetting[XML_CONFIG_LOG_BUFFERNUMBER];
+  
             if (!string.IsNullOrEmpty(strLogBufferMaxNumber))
             {
                 _LogBufferMaxNumber = Convert.ToInt32(strLogBufferMaxNumber);
@@ -100,7 +103,8 @@ namespace Kernal
             {
                 _LogBufferMaxNumber = XML_CONFIG_LOG_DEFAULT_BUUFER_NUMBER;
             }
-#endif
+
+//#if UNITY_STANDALONE_WIN||UNITY_EDITOR
 
             //创建文件
             if (!File.Exists(_LogPath))
@@ -110,7 +114,9 @@ namespace Kernal
             }
             //把日志文件中的数据同步到日志缓存中
             SyncFileDataToLogArray();
+#endif
         }
+
 
         private static void SyncFileDataToLogArray()
         {

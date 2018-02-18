@@ -41,7 +41,8 @@ namespace Globle
         LoginOnScenes,
         LevelOne,
         LevelTwo,
-        BaseScenes
+        BaseScenes,
+        TestScenes
     }
 
     public enum HeroType

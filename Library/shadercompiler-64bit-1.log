@@ -1,3 +1,87 @@
 Base path: D:/unity5.2/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-11400
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-4332
 Cmd: getPlatforms
+Cmd: compileSnippet
+  api=5 type=0 insize=1704 outsize=1108 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=1
+Cmd: compileSnippet
+  api=5 type=1 insize=1704 outsize=6 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=1
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=1797 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=2061 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=2567 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=2840 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=1780 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=1797 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=2061 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=2567 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=2840 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=1780 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=1797 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=2061 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=2567 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=2840 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=1780 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=1797 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=2061 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=2567 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=2840 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0
+Cmd: compileSnippet
+  error: 2 plat 9 at "(0): Include callback failed\nCompiling Vertex program
+Platform defines: UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE
+  api=9 type=0 insize=1780 outsize=0 kw= pd=UNITY_NO_DXT5nm UNITY_NO_RGBM UNITY_NO_SCREENSPACE_SHADOWS UNITY_NO_LINEAR_COLORSPACE ok=0

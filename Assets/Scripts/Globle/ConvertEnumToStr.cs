@@ -23,6 +23,8 @@ namespace Globle
             _DicScenesNum.Add(ScenesEnum.LoginOnScenes, "2_LoginScenes");
             _DicScenesNum.Add(ScenesEnum.LoadingScenes, "LoadingScenes");
             _DicScenesNum.Add(ScenesEnum.LevelOne, "3_LevelOne");
+            _DicScenesNum.Add(ScenesEnum.TestScenes, "Test");
+
             //_DicScenesNum.Add(ScenesEnum.LevelOne, "1_StartScenes");
             //_DicScenesNum.Add(ScenesEnum.LevelTwo, "1_StartScenes");
         }

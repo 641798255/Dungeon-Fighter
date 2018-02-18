@@ -21,6 +21,7 @@ namespace Kernal
         private static List<DialogDataFormat> _AllDialogDataArray;
         private static List<DialogDataFormat> _CurrentDialogBufferArray;
         private static int _IntIndexByDialogSection;
+        private static int _OriginalDialogSectionNum = 1;
 
         private DialogDataMgr()
         {
@@ -38,6 +39,11 @@ namespace Kernal
             return _Instance; 
         }
 
+        public  int GetDialogArrayCount()
+        {
+            return _AllDialogDataArray.Count;
+        }
+
         //加载外部数据集合
         public bool LoadAllDialogData(List<DialogDataFormat> diaDataArray)
         {
@@ -47,7 +53,7 @@ namespace Kernal
             }
             if (_AllDialogDataArray != null && _AllDialogDataArray.Count == 0)
             {
-                for (int i = 0; i < _AllDialogDataArray.Count; i++)
+                for (int i = 0; i < diaDataArray.Count; i++)
                 {
                     _AllDialogDataArray.Add(diaDataArray[i]);
                 }
@@ -70,6 +76,13 @@ namespace Kernal
             if (diaSectionNum<0)
             {
                 return false;
+            }
+
+            if (diaSectionNum>_OriginalDialogSectionNum)
+            {
+                _IntIndexByDialogSection = 0;
+                _CurrentDialogBufferArray.Clear();
+                _OriginalDialogSectionNum = diaSectionNum;
             }
             //当前缓存不为空
             if (_CurrentDialogBufferArray != null && _CurrentDialogBufferArray.Count >= 1)
