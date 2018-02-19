@@ -26,7 +26,7 @@ namespace View
         {
             BtnSelf = this.GetComponent<Button>();
             TxtCountDownNumber.enabled = false;
-            //EnableSelf();
+            EnableSelf();
         }
 
         private void Update()

@@ -27,6 +27,7 @@ namespace View
         public Text Txt_Gold;
         public Text Txt_Diamonds;
 
+        public Text Txt_Detail_HeroName;
         public Text Txt_Detail_CurHp;
         public Text Txt_Detail_MaxHp;
         public Text Txt_Detail_CurMp;
@@ -69,6 +70,7 @@ namespace View
             if (!string.IsNullOrEmpty(GlobleParameterMgr.PlayerName))
             {
                 Txt_PlayerName.text = GlobleParameterMgr.PlayerName;
+                Txt_Detail_HeroName.text= GlobleParameterMgr.PlayerName;
             }
         }
 

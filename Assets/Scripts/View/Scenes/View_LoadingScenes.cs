@@ -20,18 +20,23 @@ namespace View
 
         IEnumerator Start()
         {
-            Log.ClearLogFileAndBufferData();
-            XMLDialogsDataAnalysisMgr.GetInstance().SetXMLPathAndRootNodeName(KernalParameter.GetDialogConfigXMLPath(),KernalParameter.GetDialogConfigXMLRootNodeName());
             yield return new WaitForSeconds(1f);
-            List<DialogDataFormat> liDialogsDataArray = XMLDialogsDataAnalysisMgr.GetInstance().GetAllXMLDataArray();
-            bool booResult = DialogDataMgr.GetInstance().LoadAllDialogData(liDialogsDataArray);
 
-            //if (!booResult)
-            //{
-            //    Log.Write(GetType()+"/");
-            //}
-            //调试进入指定关卡
-            GlobleParameterMgr.Nextscenes = ScenesEnum.LevelOne;
+            #region 测试代码
+            //Log.ClearLogFileAndBufferData();
+            //XMLDialogsDataAnalysisMgr.GetInstance().SetXMLPathAndRootNodeName(KernalParameter.GetDialogConfigXMLPath(),KernalParameter.GetDialogConfigXMLRootNodeName());
+            //yield return new WaitForSeconds(1f);
+            //List<DialogDataFormat> liDialogsDataArray = XMLDialogsDataAnalysisMgr.GetInstance().GetAllXMLDataArray();
+            //bool booResult = DialogDataMgr.GetInstance().LoadAllDialogData(liDialogsDataArray);
+
+            ////if (!booResult)
+            ////{
+            ////    Log.Write(GetType()+"/");
+            ////}
+            ////调试进入指定关卡
+            //GlobleParameterMgr.Nextscenes = ScenesEnum.LevelOne;
+            #endregion
+
             StartCoroutine("LoadingScenesProgress");
         }
 

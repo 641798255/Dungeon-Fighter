@@ -9,6 +9,7 @@ using UnityEngine.UI;
 using System;
 using Kernal;
 using Globle;
+using Control;
 
 namespace View
 {
@@ -50,7 +51,7 @@ namespace View
 
         }
 
-        private void RigisterDialogs()
+        public void RigisterDialogs()
         {
             if (Img_BGDialogs!=null)
             {
@@ -111,8 +112,12 @@ namespace View
                     boolCurrentDialogResult = DialogUIMgr._Instance.DisplayNextDialog(DialogType.SingleDialogs, 2);
                     break;
                 case DialogStateStep.Step3_AliceSpeakVirtualKey:
+                    boolCurrentDialogResult = DialogUIMgr._Instance.DisplayNextDialog(DialogType.SingleDialogs, 3);
+
                     break;
                 case DialogStateStep.Step4_AliceLastWord:
+                    boolCurrentDialogResult = DialogUIMgr._Instance.DisplayNextDialog(DialogType.SingleDialogs, 4);
+
                     break;
                 default:
                     break;
@@ -127,12 +132,29 @@ namespace View
                         break;
                     case DialogStateStep.Step2_AliceSpeakET:
                         //显示引导ET贴图,控制权转移到TriggerOperateET
+                        TriggerOperateET.Instance.DisplayGuiET();
                         //暂停会话
                         UnRigisterDialogs();
                         break;
                     case DialogStateStep.Step3_AliceSpeakVirtualKey:
+                        //显示引导虚拟按键贴图,控制权转移到TriggerOperateVirtualKey
+                        TriggerOperateVirtualKey.Instance.DisplayGuiVirtualKey();
+                        //暂停会话
+                        UnRigisterDialogs();
                         break;
                     case DialogStateStep.Step4_AliceLastWord:
+                        //显示ET
+                        View_PlayerInfoResponse.Instance.DisplayET();
+                        //显示所有的虚拟按键
+                        View_PlayerInfoResponse.Instance.DisPlayAllATKKey();
+                        //显示英雄UI信息界面
+                        View_PlayerInfoResponse.Instance.DisplayHeroUIInfo();
+                        //允许生成敌人
+                        GameObject.Find("GameManager/ScenesMgr").GetComponent<View_LevelOne>().enabled=true;
+                        GameObject.Find("GameManager/ScenesMgr").GetComponent<Ctrl_LevelOneScenes>().enabled = true;
+
+                        //隐藏本对话界面
+                        Go_Background.SetActive(false);
                         boolResult = true;
                         break;
                     default:

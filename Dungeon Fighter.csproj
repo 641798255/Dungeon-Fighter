@@ -216,6 +216,7 @@
     <Compile Include="Assets\Scripts\Control\Prop\MakeObjRotation.cs" />
     <Compile Include="Assets\Scripts\Control\Prop\RevoverObjByTime.cs" />
     <Compile Include="Assets\Scripts\Control\Scenes\Ctrl_LevelOneScenes.cs" />
+    <Compile Include="Assets\Scripts\Control\Scenes\Ctrl_LoadingScenes.cs" />
     <Compile Include="Assets\Scripts\Control\Scenes\Ctrl_LoginOnScenes.cs" />
     <Compile Include="Assets\Scripts\Control\Scenes\Ctrl_StartScenes.cs" />
     <Compile Include="Assets\Scripts\Globle\ConvertEnumToStr.cs" />
@@ -238,6 +239,7 @@
     <Compile Include="Assets\Scripts\Kernal\PoolManager\Pools.cs" />
     <Compile Include="Assets\Scripts\Kernal\ResourcesMgr.cs" />
     <Compile Include="Assets\Scripts\Kernal\UnityHelper.cs" />
+    <Compile Include="Assets\Scripts\Kernal\iTween.cs" />
     <Compile Include="Assets\Scripts\Modle\Player\PlayerExtendData.cs" />
     <Compile Include="Assets\Scripts\Modle\Player\PlayerExtendDataProxy.cs" />
     <Compile Include="Assets\Scripts\Modle\Player\PlayerKernalData.cs" />
@@ -246,6 +248,7 @@
     <Compile Include="Assets\Scripts\Test\TestDialog.cs" />
     <Compile Include="Assets\Scripts\Test\TestDialogUI.cs" />
     <Compile Include="Assets\Scripts\View\Guide\GuideMgr.cs" />
+    <Compile Include="Assets\Scripts\View\Guide\GuideMoving.cs" />
     <Compile Include="Assets\Scripts\View\Guide\IGuideTrigger.cs" />
     <Compile Include="Assets\Scripts\View\Guide\TriggerDialogs.cs" />
     <Compile Include="Assets\Scripts\View\Guide\TriggerOperateET.cs" />

@@ -104,6 +104,7 @@ namespace Control
             if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICC)
             {
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickC);
+                Ctrl_HeroAnimation.Instance.ChangeCanAsk();
                 StartCoroutine("AttackEnemyByMagicC");
 
             }
@@ -113,6 +114,7 @@ namespace Control
             if (controlType == GlobleParameter.INPUT_MGR_ATTACKNAME_MAGICD)
             {
                 Ctrl_HeroAnimation.Instance.SetCurrentActionState(HeroActionState.MagicTrickD);
+                Ctrl_HeroAnimation.Instance.ChangeCanAsk();
                 StartCoroutine("AttackEnemyByMagicD");
 
             }

@@ -24,8 +24,8 @@ namespace View
             yield return new WaitForSeconds(GlobleParameter.INTERVAL_TIME_0DOT1);
             Go_UINormalMagicA.GetComponent<View_ATKBtnCDEffect>().EnableSelf();
             Go_UINormalMagicB.GetComponent<View_ATKBtnCDEffect>().EnableSelf();
-            Go_UINormalMagicC.GetComponent<View_ATKBtnCDEffect>().DisableSelf();
-            Go_UINormalMagicD.GetComponent<View_ATKBtnCDEffect>().DisableSelf();
+            Go_UINormalMagicC.GetComponent<View_ATKBtnCDEffect>().EnableSelf();
+            Go_UINormalMagicD.GetComponent<View_ATKBtnCDEffect>().EnableSelf();
         }
 
     }

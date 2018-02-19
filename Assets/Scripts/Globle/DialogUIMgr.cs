@@ -113,7 +113,15 @@ namespace Globle
                 case DialogType.DoubleDialogs:
                     if (!string.IsNullOrEmpty(strPersonName) &&!string.IsNullOrEmpty(strDialogContent))
                     {
-                        Txt_PersonName.text = strPersonName;
+                        if (diaSide == DialogSide.Hero)
+                        {
+                            Txt_PersonName.text = GlobleParameterMgr.PlayerName;
+
+                        }
+                        else
+                        {
+                            Txt_PersonName.text = strPersonName;
+                        }
                         Txt_DoubleDialogContent.text = strDialogContent;
 
                     }

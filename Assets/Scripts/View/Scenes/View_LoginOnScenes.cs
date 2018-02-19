@@ -46,7 +46,17 @@ namespace View
 
         public void SubmitInfo()
         {
-            Globle.GlobleParameterMgr.PlayerName = UserName.text;
+            if (string.IsNullOrEmpty(UserName.text))
+            {
+                Globle.GlobleParameterMgr.PlayerName = "胡佳明";
+            }
+            else
+            {
+                Globle.GlobleParameterMgr.PlayerName = UserName.text;
+
+            }
+          
+
             Ctrl_LoginOnScenes.Instance.EnterNextScenes();
         }
 

@@ -52,7 +52,21 @@ namespace View
         /// <returns>true：表示业务逻辑执行完毕</returns>
         public bool RunOperation()
         {
-            return false;
+            _IsExitNextDialogsRecorder = false;
+            //隐藏对话界面
+            Go_Background.SetActive(false);
+            //隐藏引导ET贴图
+            Img_GuideET.gameObject.SetActive(false);
+            //激活ET
+            View_PlayerInfoResponse.Instance.DisplayET();
+            //恢复对话系统，继续对话
+            StartCoroutine("ResumeDialogs");
+            return true;
+        }
+
+        public void DisplayGuiET()
+        {
+            Img_GuideET.gameObject.SetActive(true);
         }
 
         private void RigisterGuideET()
@@ -69,6 +83,22 @@ namespace View
             {
                 _IsExitNextDialogsRecorder = true;
             }
+        }
+
+
+        IEnumerator ResumeDialogs()
+        {
+            yield return new WaitForSeconds(GlobleParameter.INTERVAL_TIME_2DOT5);
+            yield return new WaitForSeconds(GlobleParameter.INTERVAL_TIME_2DOT5);
+
+            //隐藏ET
+            View_PlayerInfoResponse.Instance.HideET();
+            //注册会话系统，允许继续会话
+            TriggerDialogs.Instance.RigisterDialogs();
+            //运行对话系统，显示下一条对话信息
+            TriggerDialogs.Instance.RunOperation();
+            //显示对话界面
+            Go_Background.SetActive(true);
         }
     }
 }
